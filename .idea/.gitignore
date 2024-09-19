@@ -1,0 +1,87 @@
+# Временные файлы, скомпилированные классы и логи
+*.class
+*.log
+*.tmp
+*.out
+*.jar
+*.war
+*.ear
+
+# Каталоги
+bin/
+target/
+build/
+out/
+.idea/
+.project
+.classpath
+.settings/
+
+# Файлы IDE (Eclipse, IntelliJ IDEA)
+# IntelliJ IDEA
+/.idea/
+/*.iml
+*.iws
+*.ipr
+
+# Eclipse
+/.metadata/
+/bin/
+*.class
+/.classpath
+/.project
+/.settings/
+
+# Maven
+.mvn/
+target/
+!src/main/resources/static/libs/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/pom.xml.next
+/release.properties
+
+# Gradle
+.gradle/
+/build/
+/.gradle-cache/
+/!gradle-wrapper.jar
+gradle-app.setting
+build/
+buildSrc/
+build.gradle
+gradle.properties
+gradle-wrapper.properties
+gradle-wrapper.jar
+gradlew
+gradlew.bat
+
+# Кэш-папки IDE и системы
+/.idea/
+/*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# MacOS системные файлы
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows Thumbnail Cache файлы
+Thumbs.db
+ehthumbs.db
+
+# Windows файлы настройки
+Desktop.ini
+$RECYCLE.BIN/
+
+# Линукс образцы путей и команд
+*~
+*.swp
+*.swo
+*.tmp
+.npm/
+node_modules/
