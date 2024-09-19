@@ -1,4 +1,5 @@
 package com.company;
+
 public class Calculator {
 public static int calculate(int argOne, int argTwo, char operation) {
     switch (operation) {
@@ -17,7 +18,7 @@ public static int calculate(int argOne, int argTwo, char operation) {
 public static String calculate(String argOne, String argTwo, char operation) {
     int firstArg = convertToArabianNumber(argOne);
     int secondArg = convertToArabianNumber(argTwo);
-    if (firstArg < secondArg) {
+    if (firstArg < secondArg && operation == '-') {
         throw new NumberFormatException("в римской системе нет отрицательных чисел");
     }
 

@@ -4,20 +4,24 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите первый аргумент");
-        String firstArg = scanner.nextLine();
-        System.out.println("Введено " + firstArg);
-        System.out.println("Введите второй аргумент");
-        String secondArg = scanner.nextLine();
-        System.out.println("Введено " + secondArg);
-        System.out.println("Введите желаемый оператор: + - / *");
-        String operator = scanner.nextLine();
-        calculate(firstArg, secondArg, operator);
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите два числа и оператор в формате a (+,-,/,*) b");
+            String arguments = scanner.nextLine();
+            System.out.println(arguments);
+            Operators operators = Operators.fetchAllArguments(arguments);
+            if (!CalculatorHelper.checkCorrect(operators.firstArg, CalculatorHelper.ArgType.NUMBER)) {
+                throw new NumberFormatException("Аргумент должен содержать только арабские или римские цифры!");
+            } else if (!CalculatorHelper.checkCorrect(operators.secondArg, CalculatorHelper.ArgType.NUMBER)) {
+                throw new NumberFormatException("Аргумент должен содержать только арабские или римские цифры!");
+            } else if (!CalculatorHelper.checkCorrect(operators.firstArg, CalculatorHelper.ArgType.OP)) {
+                throw new NumberFormatException("Недопустимый оператор!");
+            }
+            calculate(operators.firstArg, operators.secondArg, operators.operator);
+        }
     }
 
     private static void calculate(String firstArg, String secondArg, String operator) {
-
         if (CalculatorHelper.checkCorrectInputs(firstArg, secondArg, operator)) {
             if (CalculatorHelper.isNumeric(firstArg) && CalculatorHelper.isNumeric(secondArg)) {
                 System.out.println("Результат " +

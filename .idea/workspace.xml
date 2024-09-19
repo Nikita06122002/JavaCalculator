@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef2b213-cbe0-4db2-8091-9662e033dd9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/CalculatorHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Calculator/com/company/CalculatorHelper$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Calculator/com/company/CalculatorHelper$ArgType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Operators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/company/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator/com/company/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/company/CalculatorHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator/com/company/CalculatorHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Calculator/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Calculator/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CalculatorHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CalculatorHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +107,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
@@ -141,7 +146,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726745064794</updated>
-      <workItem from="1726745066624" duration="7430000" />
+      <workItem from="1726745066624" duration="13294000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initial commit">
       <created>1726745613354</created>
@@ -157,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726748460718</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: Finished&#10;&#10;- Added exceptions&#10;- Refactoring checking conditions">
+      <created>1726752775899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726752775899</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +189,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Initial commit" />
     <MESSAGE value="feat: Calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Calculator" />
+    <MESSAGE value="feat: Finished&#10;&#10;- Added exceptions&#10;- Refactoring checking conditions" />
+    <MESSAGE value="feat: Refactoring&#10;&#10;- Added infinite cycle with exceptions&#10;- Added class for operators" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Refactoring&#10;&#10;- Added infinite cycle with exceptions&#10;- Added class for operators" />
   </component>
 </project>

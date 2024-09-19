@@ -3,16 +3,13 @@ package com.company;
 public class CalculatorHelper {
     public static boolean checkCorrectInputs(String firstArg, String secondArg, String operator) {
         if (operator.length() > 1) {
-            System.out.println("Оператором является один из этих символов: / * + -");
-            return false;
+            throw new NumberFormatException("Оператором является один из этих символов: / * + -");
         }
         if (firstArg.isEmpty() || secondArg.isEmpty() || !isOperator(operator.charAt(0))) {
-            System.out.println("Строка не является математической операцией");
-            return false;
+            throw new NumberFormatException("Строка не является математической операцией:" + operator);
         }
         if ((isNumeric(firstArg) && !isNumeric(secondArg)) || (!isNumeric(firstArg) && isNumeric(secondArg))) {
-            System.out.println("Введены числа из разных систем счислений");
-            return false;
+            throw new NumberFormatException("Введены числа из разных систем счислений");
         }
         return true;
     }
@@ -42,8 +39,26 @@ public class CalculatorHelper {
         try {
             return Integer.parseInt(arg);
         } catch (NumberFormatException e) {
-            System.out.println("Ошибка: строка не может быть преобразована в целое число");
-            return 0;
+            throw new NumberFormatException("Ошибка: строка не может быть преобразована в целое число");
         }
+    }
+
+    public static boolean checkCorrect(String arg, ArgType type) {
+        switch (type) {
+            case NUMBER:
+                if (arg.contains("+") || arg.contains("-") || arg.contains("*") || arg.contains("/")) {
+                    return false;
+                }
+            case OP:
+                String input = "-+/*";
+                if (input.matches(".*[a-zA-Z0-9].*")) {
+                    return false;
+                }
+        }
+        return true;
+    }
+
+    enum ArgType {
+        NUMBER, OP;
     }
 }
