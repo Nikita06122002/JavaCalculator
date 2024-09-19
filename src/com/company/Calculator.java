@@ -14,8 +14,15 @@ public static int calculate(int argOne, int argTwo, char operation) {
     return 0;
 }
 
-public static int calculate(String argOne, String argTwo, char operation) {
-    return calculate(convertToArabianNumber(argOne), convertToArabianNumber(argTwo), operation);
+public static String calculate(String argOne, String argTwo, char operation) {
+    int firstArg = convertToArabianNumber(argOne);
+    int secondArg = convertToArabianNumber(argTwo);
+    if (firstArg < secondArg) {
+        throw new NumberFormatException("в римской системе нет отрицательных чисел");
+    }
+
+    int result = calculate(convertToArabianNumber(argOne), convertToArabianNumber(argTwo), operation);
+    return getRomeValue(result);
 }
 
 private static int convertToArabianNumber(String number) {
@@ -24,7 +31,6 @@ private static int convertToArabianNumber(String number) {
     int i = 1;
     int length = number.length() - 1;
     while (i <= length) {
-        char current = normalizedNumber.charAt(i);
             if (getRomanValue(normalizedNumber.charAt(i)) > getRomanValue(normalizedNumber.charAt(i - 1))) {
                 result -= getRomanValue(normalizedNumber.charAt(i - 1));
                 result += getRomanValue(normalizedNumber.charAt(i)) - getRomanValue(normalizedNumber.charAt(i - 1));
@@ -47,5 +53,22 @@ private static int convertToArabianNumber(String number) {
             case 'm': return 1000;
             default: throw new IllegalArgumentException("Некорректная римская цифра: " + romanChar);
         }
+    }
+
+    private static String getRomeValue(int value) {
+    if (value > 3999) {
+        throw new NumberFormatException("стандартная римская система не поддерживает такие значения");
+        }
+        int[] arabicValues = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] romanSymbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        StringBuilder roman = new StringBuilder();
+
+        for (int i = 0; i < arabicValues.length; i++) {
+            while (value >= arabicValues[i]) {
+                roman.append(romanSymbols[i]);
+                value -= arabicValues[i];
+            }
+        }
+        return roman.toString();
     }
 }
